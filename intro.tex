@@ -55,27 +55,26 @@
 
 \begin{frame}
   \frametitle{(Non-)Examples of smooth manifolds}
-  % Let's look at some examples of manifolds.
+  % Let's look at some examples of manifolds. In general, taking the (disjoint) union of two n-manifolds yields another n-manifold - so we can focus on connected spaces.
   \begin{itemize}
-  % In general, taking the (disjoint) union of two n-manifolds yields another n-manifold - so we can focus on connected spaces.
-  % A zero-dimensional manifold is a point (or several disconnected points) -- not interesting.
-  % In dimension 1, we can have a line, but also a circle (and unions of those).
+  % A zero-dimensional manifold consists of isolated points, which is often not interesting.
+  \item $n=0$: isolated points
+  % In dimension 1, we can have a line, but also a circle.
   \item $n=1$: $\R$, $\sphere{1}$ % TODO: add pictures!
   \framebox[1cm]{line}\framebox[1cm]{circle}
   %\includegraphics[width=1cm]{images/line.png}
   %\includegraphics[width=1cm]{images/circle.png}
-  % in dimension two, things get more interesting: the earth's surface is such an example.
-  % topologically, it's homeomorphic to a sphere (or perhaps your favourite potato); we can also have a doughnut (or coffee cup) - but we could also take g tori and squish them together in a line (as drawn here). You'd call that a closed genus g surface.
+  % In dimension two, things get more interesting: the earth's surface is such an example. Topologically, it's homeomorphic to a sphere (or perhaps your favourite potato); we can also have a doughnut (or coffee cup) - but we could also take g tori and squish them together in a line (as drawn here). You'd call that a closed genus g surface. Of course, something like the real plane is totally fine as well.
   \item $n=2$: $\R^2$, $\sphere{2}$, $\T^2$, $\Sigma_g$ for $g\geq 1$\\
   \raisebox{4pt}{\mbox{\includegraphics[width=1cm]{images/torus.png}}}
   \includegraphics[width=1.5cm]{images/surface_genus_2.png}
-  \includegraphics[width=2cm]{images/surface_genus_g.png}
-  % in three dimensions, you have the three-sphere and 3-torus, but also real projective space; there's a whole zoo of other 3-manifolds
-  % you don't have a nice list of manifolds as in dimension two, but you still have an explicit classification
-  \item $n=3$: $\R^3$, $\sphere{3}$, $\T^3$, $\RP{3}$
-  % from dimension four onwards, things get much wilder. a classification is provably impossible; even e.g. simply connected ones are HARD
-  \item $n=4$: $R^4$, $\sphere{4}$, $\T^4$, $\CP{2}$, $\CP{2}\#\overline{\CP{2}}$
-  % FIXME: compare with Thomas' talk and insert more examples
+  \includegraphics[width=2cm]{images/surface_genus_g.png}\pause
+  % In higher dimensions, things get much more interesting and complicated. In dimension two, you have a list of all manifolds. You can still classify manifolds in 3 dimensions (but much harder); in four and higher dimensions, this is impossible.
+  \item $n\geq 3$: complicated; classification for $n\geq 4$ impossible
+  % For instance, in addition to spheres and tori, there are real and complex projective space. Algebraic geometers study smooth algebraic varieties (such as the Fermat quintic listed here).
+  % One notable example are configuration space in physics and engineering: we'll see this again later.
+  \item $n\geq 3$: $\R^n$, $\sphere{n}$, $\torus{n}$, $\RP{n}$, $\CP{n}$, $\{ [z_0\colon z_1\colon z_2\colon z_3\colon z_4]\in\CP{4}\;\mid\; z_0^5+\dots+z_4^5=0\}$\\
+  configuration spaces in physics and engineering
   \end{itemize}
   % And some things which are not a manifold: the letter X is not a 1-dimensional manifold (at the crossing, it's not homeomorphic to a line segment)
 \end{frame}
@@ -85,13 +84,14 @@
 \begin{frame}
   \frametitle{How to measure area on a 2-manifold?}
   \begin{itemize}
-  % For a subset of R^n, we obtain the area by integrating its characteristic function (w.r.t. a suitable measure).
+  % For a subset of R^2, we obtain the area by integrating its characteristic function (w.r.t. a suitable measure).
   % If our patch is sufficiently small, we map it to R^2 via a chart and determine the area there: this amounts to integrating over a density function. Globally, we need to choose density functions in each chart in a compatible way: this amounts to a differential 2-form.
   \item locally: integrate density function
   \item globally: use a differential 2-form
   % To make this precise, we consider the *tangent space* at a point. Imagine the manifold placed inside some R^n (the Whitney embedding theorem tell us we can always do this). Geometrically, the tangent space at a point is the space of all vectors at this point which are tangent to a manifold. I'll skip a formal definition.
   % This is a real vector space, of the same dimension as the manifold. Moreover, a local chart induces a basis of the tangent space.
   \item each $p\in M$ has \highlight{tangent space} $T_pM$, $2$-dimensional
+  % TODO: insert a picture, if I get a nice one!
   % Now, a differential two-form locally specifies a density function for each local chart. Formally, it's a family of skew-symmetric bilinear maps on each tangent space, varying smoothly along the base point.
   \item $2$-form $\omega = \{\omega_p\colon T_pM\times T_pM\to \R\}_{p\in M}$\\ $\omega_p$ anti-symmetric bilinear, smoothly varying with $p$
   % We call a 2-form an area form if each bilinear map is non-degenerate.
@@ -122,7 +122,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Symplectic manifolds (geometric definition)}
+  \frametitle{Symplectic manifolds (cont.)}
   \begin{itemize}
     \item \highlight{standard symplectic structure} on $\R^{2n}$:\\
     map $\gamma\to A(\gamma)=A(\gamma_1)+\dots+A(\gamma_n)$,\\
@@ -132,6 +132,6 @@
     % In other words, it's an atlas whose transition functions preserve signed area.
     \item symplectic structure on $M$ is an atlas whose transition functions preserve signed area
     % why are these definitions the same? if \gamma bounds the disc D, Stokes shows A(\gamma)=\int_D \omega_std. Darboux' shows a symplectic structure is an atlas whose transition functions are symplectomorphisms.
-    \item equivalence: Darboux' theorem and short computation
+    \hide{\item equivalence: Darboux' theorem and short computation}
   \end{itemize}
 \end{frame}

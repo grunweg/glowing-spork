@@ -10,7 +10,7 @@
   \begin{theorem}
     Every symplectic manifold admits an almost complex structure.
   \end{theorem}
-  % In fact, there are many possible choices of almost complex structure. You should regard the choice of acs as an auxiliary object; the particular choice is not important. For instance, the space of all compatible acs is contractible - hence many constructions are independent of the *choice* of acs.
+  % In fact, there are many possible choices of almost complex structure. You should regard the choice of acs as an auxiliary object; the particular choice is not important. For instance, the space of all compatible acs is contractible - which implies many constructions are independent of the *choice* of acs.
 \end{frame}
 
 \begin{frame}
@@ -85,7 +85,7 @@
     \item solution: extend $\Phi$ to a larger domain,\\
     e.g.\ \highlight{Sobolev spaces} $W^{k,p}(\Sigma,M)$ for $kp>2$
     % A priori, the zero set of this extended Phi could be larger: in our case, we can exclude this. The Cauchy-Riemann equation is an elliptic partial differential equation. Hence we can apply regularity results for elliptic operators to show that every solution of the C-R eqn is in fact smooth.
-    \item elliptic regularity: extension has same zero set
+    \item \highlight{elliptic regularity}: extension has same zero set
   \end{itemize}
   % Note two things I have not talked about: transversality of the section and compactness of the moduli space. That comes now.
 \end{frame}
@@ -94,9 +94,9 @@
   \frametitle{Bad news: transversality and compactness}
   % Our wishful thinking was too optimistic for two further reasons.
   \begin{itemize}
-    % firstly, the moduli space is not compact: but it can be compactified. We just need to add some condition on our almost compatible structure. For instance, it suffices to assume compatibility (then it'll induce a Riemannian metric).
+    % firstly, the moduli space is not compact: but it can be compactified. We just need to add some condition on our almost compatible structure. For instance, it suffices to assume the the acs is compatible, i.e. plugging it into the symplectic form induces a Riemannian metric.
     \item $\mathcal{M}_g(A,J)$ is not compact, but compactifiable:\\
-    need to assume $J$ is compatible (i.e. $\omega(\cdot,J\cdot)$ Riemannian metric)
+    require compatible $J$ (i.e. $\omega(\cdot,J\cdot)$ Riemannian metric)
     % secondly, transversality is not always true: there are examples of J such that M is not a manifold. The best we can hope for is that almost any J satifies this. (For the experts: the set of such J is comeagre.)
     \item transversality failure: for some $J$, $\mathcal{M}_g(A,J)$ is not a manifold\\
     best case: holds for ``generic'' $J$
@@ -106,7 +106,7 @@
     \item more generally: transversality doesn't like symmetry\\
     e.g. multiply covered curves (or external group action)
   \end{itemize}
-% To summarise: the space of all simple curves (not multiply covered) is a smooth manifold, for generic compatible $J$
+% To summarise: the space of all simple curves (not multiply covered) is a smooth manifold, for generic compatible $J$.
 \begin{theorem}
   For ``almost all'' compatible $J$, $\mathcal{M}^*_g(A,J)$ is a smooth compactifiable manifold\shrink{ of dimension $(n-3)(2-2g)+2\langle c_1(TM), A\rangle$}.
 \end{theorem}
