@@ -1,26 +1,30 @@
 % Thank you for the invitation and the kind introduction.
 % Good afternoon and welcome! I'll give a glimpse into symplectic geometry and holomorphic curves. This is a broad field, so many things I cannot tell you - but let me show you three questions which I *will* talk about.
 
-\section{introduction}
+\section{Introduction}
 \begin{frame}
   \frametitle{Three motivating questions}
-  % The first question is about the so-called filling problem: when is a manifold the boundary of a compact manifold one dimension higher?
-  \begin{block}{Question 1: symplectic fillings}
+  % The first question is about dynamical systems: what can we say about periodic orbits of a mechanical system? Can we e.g. find lower bounds on their number?
+  \begin{block}{Question 1: dynamical systems}
+    What can we say about periodic orbits of a mechanical system\\(e.g. double pendulum, the solar system)?
+  \end{block}
+  % The second question is about the so-called filling problem: when is a manifold the boundary of a compact manifold one dimension higher?
+  \begin{block}{Question 2: symplectic fillings}
     When is a smooth manifold the boundary of a compact manifold?
   \end{block}
-  % Secondly, if you have an elliptic partial differential equation, what can we expect its solution space to look like?
-  \begin{block}{Question 2: moduli spaces}
+  % Thirdly, if you have an elliptic partial differential equation, what can we expect its solution space to look like?
+  \begin{block}{Question 3: moduli spaces}
     What does the solution space to an elliptic PDE look like?
-  \end{block}
-  % Thirdly: what can we say about periodic orbits of a mechanical system?
-  \begin{block}{Question 3: dynamical systems}
-    What can we say about periodic orbits of a mechanical system\\(e.g. double pendulum, the solar system)?
   \end{block}
   % There are more questions we could put here. For instance, Shah Faisal will talk about symplectic embedding problems tomorrow.
 \end{frame}
 
-% I hope there's an interesting question for you. Let's dive in and set the stage for our first hero, symplectic manifolds.
-% "manifold", I hear you ask. Let me start by quickly explaining that.
+% I hope there's an interesting question for you.
+% In short, this is what I'll talk about today.
+% I'll tell you what a symplectic manifold is and show you why symplectic manifolds occur naturally (they arise from classical physics). Then, we will see some results that can be proven using symplectic geometry.
+% All these results rely on symplectic invariants, defined by counting objects known as pseudo-holomorphic curves. Hence, in the last part I'll show what these are, and dissect a bit how these invariants work.
+
+% Let's dive in and set the stage for our first hero, symplectic manifolds. "Manifold", I hear you ask. Let me start by quickly explaining that.
 \begin{frame}
   \frametitle{Smooth manifolds}
   % Imagine you're an ant crawling over the surface of the earth. You can move in two independent directions: forwards or backwards, and left or right. Let's pretend you're *really* small, so you don't notice that earth is uneven: to you, whereever you are, near you the surface of the earth looks like (part of) a disc.
@@ -49,11 +53,13 @@
     % One can have different smooth structures on the same topological manifold; we always talk about a manifold with a chosen smooth structure.
     % This is a restriction, but often not a big one. "Many" topological manifolds have a smooth structure; there are notably some manifolds which are not. (This is part of what Simon Donaldson got his fields medal for in 1986.)
     \item smooth manifold: all coordinate transformations from overlapping charts are smooth
+    % I'll also sometime mention the boundary of a manifold: this is where a manifold looks like a half-space. For instance, the upper half of the plane is a manifold with boundary - the real axis.
+    \item boundary: looks like upper half of $\R^n$
   \end{itemize}
   \includegraphics[width=8cm]{images/surface_with_chart.png}
 \end{frame}
 
-\begin{frame}
+\begin{frame} % CAN SKIP
   \frametitle{(Non-)Examples of smooth manifolds}
   % Let's look at some examples of manifolds. In general, taking the (disjoint) union of two n-manifolds yields another n-manifold - so we can focus on connected spaces.
   \begin{itemize}
