@@ -1,0 +1,26 @@
+\documentclass[utf8,compress]{beamer}
+%\usetheme{Warsaw}%\useoutertheme{infolines}
+\useoutertheme[subsection=false]{miniframes}\usetheme{Frankfurt}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+% Define my own math commands as needed. Don't include theorems, and those are predefined by beamer.
+\input{math_macros}
+\newtheorem{prop}{Proposition}
+\newtheorem{obs}{Observation}
+\DeclareMathOperator{\hmi}{hmi}
+\DeclareMathOperator{\mi}{mi}
+\DeclareMathOperator{\lSFT}{lSFT}
+%\usepackage{tikz-cd}
+% Some common hyphenation patterns.
+\hyphenation{meth-od sur-gery sur-ge-ries trans-ver-sal-i-ty Will-iam Thurs-ton Wein-stein}
+
+% no references needed in my presentation
+
+% Temporary commands during editing and style checking.
+\usepackage{ed}
+\newcommand{\hide}[1]{}
+\newcommand{\reminder}[1]{$\rhd$ #1 $\lhd$}
+\newcommand{\remed}[1]{\reminder{#1}\ednote{#1}}
+\RequirePackage[l2tabu, orthodox]{nag}

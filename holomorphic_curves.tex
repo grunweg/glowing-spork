@@ -1,0 +1,113 @@
+\section{Pseudo-holomorphic curves}
+% We have now entered the machine room of our proof and seen some ingredients in motion. Let's examine our main machine in more detail. I've promised you pseudo-holomorphic curves, so here we go. What is a pseudo-holomorphic curve?
+% Hearing "holomorphic", we'd expect something whose differential is complex linear, so we should talk about what complex multiplication means.
+\begin{frame}
+  \frametitle{Pseudo-holomorphic curves}
+  \begin{definition}
+    An \highlight{almost complex structure} on a smooth manifold $M$ is a collection of maps $J_p\colon T_pM\to T_pM$ with $J_p^2=-\id$, smoothly varying in $p$.
+  \end{definition}
+  % morally, an almost complex structure corresponds to multiplication by i on each tangent space (and indeed, each tangent space becomes a complex vector space this way)
+  \begin{theorem}
+    Every symplectic manifold admits an almost complex structure.
+  \end{theorem}
+  % In fact, there are many possible choices of almost complex structure. You should regard the choice of acs as an auxiliary object; the particular choice is not important. For instance, the space of all compatible acs is contractible - hence many constructions are independent of the *choice* of acs.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Pseudo-holomorphic curves}
+    % An almost complex manifold is a smooth manifold with a choice of almost complex structure. A pseudo-holomorphic curve is a map between two almost complex manifolds - that explains the word "ps-holo". It's domain is one-dimensional; we already saw them today.
+  \begin{definition}
+    A \highlight{Riemann surface} is a smooth surface with a choice of almost complex structure.
+  \end{definition}
+  % Today, we are interested in closed Riemann surfaces: compact without boundary. In fact, we have already seen all of them. If Sigma is a Riemann surface, it is diffeomorphic (and even biholomorphic) to the standard genus g surface, for some g\geq 0. We call g the genus of $\Sigma$
+  % One can talk about punctured Riemann surfaces (not today; Floer cylinders are punctured holo curve). I don't think surfaces of infinite type are ever studied...
+  \begin{fact}
+    If $(\Sigma,j)$ is a Riemann surface and $\Sigma$ is closed, then $(\Sigma,j)\cong (\Sigma_g,j')$ for some $g\geq 0$. We call $g$ the \highlight{genus} of $\Sigma$.
+  \end{fact}
+  \begin{definition}
+    A \shrink{closed} \highlight{pseudo-holomorphic curve} is a smooth map $u\colon (\Sigma,j)\to (M,J)$ with $J\circ du=du\circ j$,
+    where $(\Sigma,j)$ is a closed Riemann surface and $(M,J)$ an almost complex manifold.
+  \end{definition}
+  % In case you get confused: a pseudo-holomorphic curve is (the image of)a two-dimensional real manifold --- but as a complex manifold, it's one-dimensional (hence called a curve).
+\end{frame}
+
+\begin{frame}
+  \frametitle{Moduli space of holomorphic curves}
+  % one key idea is to consider the moduli space of all holomorphic curves with given data
+  % We've already seen that we can group them by their genus. We can also group by their homology class, the pushforward of the domain's fundamental class under the curve
+
+  given: $(M,\omega)$ symplectic, almost complex structure $J$ on $M$\\
+  for $g\geq 0$ and $A\in H_2(M)$, consider the \highlight{moduli space} of holomorphic curves
+  \[ \mathcal{M}_g(A,J) := \{ u\colon (\Sigma,j)\to (M,J)\;\mid\; \text{u ps.-holo}; \Sigma\cong\Sigma_g, u_*[\Sigma]=A \}/_\sim \]
+  % we quotient by reparametrisation (i.e. relating by a biholomorphic map on Sigma): fundamentally, in applications we care about the image of the curve in M
+
+  intuition: $J$ is an auxiliary object
+  % In our dream world, every moduli space is a compact smooth manifold. In fact, there is a formula for its dimension in terms of A and g.
+  \begin{block}{Wishful thinking}
+    $\mathcal{M}_g(A,J)$ is a compact smooth manifold (and finite-dimensional).
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Understanding the moduli space of holomorphic curves}
+  \begin{block}{Wishful thinking}
+    \fade{$\mathcal{M}_g(A,J)$ is a compact smooth manifold (and finite-dimensional).}
+  \end{block}
+  % How would we approach proving this? We can use the implicit function theorem. Let's rephrase the equation defining a holomorphic curve: multiply both sides by J and use J²=-id.
+  \begin{itemize}
+    \item rephrase: $u\colon (\Sigma,j)\to (M,J)$ is $J$-holomorphic iff $J\circ du\circ j=-du$ iff $du+J\circ du\circ j=0$
+    % in other words, the moduli space is the zero set of the map sending u and J to du plus J composed with du composed with j
+    \item so: $\mathcal{M}_g(A,J)$ is the zero set of $\Phi\colon(u,J)\mapsto du+J\circ du\circ j$
+  \end{itemize}
+  \pause
+  % This is the kind of statement coming from the implicit function theorem.
+  \begin{block}{\shrink{Finite-dimensional} Implicit function theorem}
+    $E\to B$ smooth vector bundle, $s\colon B\to E$ smooth section transverse to the zero section. Then $s^{-1}(0)\subset B$ is a smooth submanifold.
+  \end{block}
+  % Looking closely: the map above lives in a vector bundle --- its base is the product of all smooth maps from Sigma to M with the space of all acs. This is infinite-dimensional (as is its rank).
+  domain of $\Phi$ is $C^\infty(\Sigma,M)\times\mathcal{J}(M,\omega)$,
+  where $\mathcal{J}(M,\omega)$ is the space of all \shrink{compatible} almost complex structures
+\end{frame}
+
+% The implicit function also holds in infinite dimensions, but with extra hypotheses. This adds further complications.
+\begin{frame}
+  \frametitle{Infinite-dimensional complications}
+  \fade{$\mathcal{M}_g(A,J)$ is the zero set of $\Phi\colon C^\infty(\Sigma,M)\times\mathcal{J}(M,\omega)\to \dots$, $(u,J)\mapsto du+J\circ du\circ j$}
+  \begin{itemize}
+    % One additional condition in infinite dimensionals issue is that the linearisation of the section has a bounded right inverse. (This is automatic in finite dimensions.) This follows as the linearisation of Phi will be a Fredholm operator.
+    \item linearisation of section has a bounded inverse:\\ok, $d\Phi$ is a \highlight{Fredholm operator}\pause
+
+    % perhaps the biggest one: the domain of a Phi is not complete; the space of smooth maps is not complete - hence we cannot apply the IFT
+    \item domain must be a \highlight{Banach manifold}:\\
+    but $C^\infty(\Sigma,M)$ is not complete!
+    % The solution is to extend Phi to a larger domain which is complete. Most commonly, we extend to a suitable Sobolev space of maps.
+    % The condition $kp>2$ is necessary so the Sobolev embedding theorem guarantees continuity of our Sobolev maps.
+    \item solution: extend $\Phi$ to a larger domain,\\
+    e.g.\ \highlight{Sobolev spaces} $W^{k,p}(\Sigma,M)$ for $kp>2$
+    % A priori, the zero set of this extended Phi could be larger: in our case, we can exclude this. The Cauchy-Riemann equation is an elliptic partial differential equation. Hence we can apply regularity results for elliptic operators to show that every solution of the C-R eqn is in fact smooth.
+    \item elliptic regularity: extension has same zero set
+  \end{itemize}
+  % Note two things I have not talked about: transversality of the section and compactness of the moduli space. That comes now.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Bad news: transversality and compactness}
+  % Our wishful thinking was too optimistic for two further reasons.
+  \begin{itemize}
+    % firstly, the moduli space is not compact: but it can be compactified. We just need to add some condition on our almost compatible structure. For instance, it suffices to assume compatibility (then it'll induce a Riemannian metric).
+    \item $\mathcal{M}_g(A,J)$ is not compact, but compactifiable:\\
+    need to assume $J$ is compatible (i.e. $\omega(\cdot,J\cdot)$ Riemannian metric)
+    % secondly, transversality is not always true: there are examples of J such that M is not a manifold. The best we can hope for is that almost any J satifies this. (For the experts: the set of such J is comeagre.)
+    \item transversality failure: for some $J$, $\mathcal{M}_g(A,J)$ is not a manifold\\
+    best case: holds for ``generic'' $J$
+    % In fact, even that is too much to ask: as a rule of thumb, transversality results are incompatible with symmetries.
+    % One instance of this are multiply covered curves: a holomorphic curve is multiply covered iff it factors through a (possibly branched) cover of Riemann surfaces. The cover's deck transformations act on the curve, obstructing transversality.
+    % (Of course, this also applie if an external group acts on M.)
+    \item more generally: transversality doesn't like symmetry\\
+    e.g. multiply covered curves (or external group action)
+  \end{itemize}
+% To summarise: the space of all simple curves (not multiply covered) is a smooth manifold, for generic compatible $J$
+\begin{theorem}
+  For ``almost all'' compatible $J$, $\mathcal{M}^*_g(A,J)$ is a smooth compactifiable manifold\shrink{ of dimension $(n-3)(2-2g)+2\langle c_1(TM), A\rangle$}.
+\end{theorem}
+\end{frame}

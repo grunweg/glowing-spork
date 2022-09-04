@@ -1,0 +1,129 @@
+\section{Sample questions}
+
+% I've told you a lot *about* symplectic geometry by now; let's dive in and see some open or solved problems.
+% What's a very basic question you could ask? (Pause) Right, you may wonder: does a given smooth manifold admit a symplectic structure?
+\begin{frame}
+  \frametitle{Which manifolds are symplectic?}
+  \begin{itemize}
+    % the big surprise is: we don't fully know! we don't have a general equivalent criterion
+    % I've told you three equivalent definitions by now, but their equivalence is "shallow". Does not help for determining.
+    \item no full answer known! % for open manifolds, there is an h-principle: TODO LOOK UP! a non-degenerate 2-form suffices, is homotopic to a closed one
+    \item necessary conditions
+    \begin{itemize}
+      \item even dimension, orientable % symplectic form induces a volume form
+      \item $\exists$ (compatible) almost complex structure
+% will talk about this later; in fact implies the previous bullet
+      \item if compact: $H^{2i}(M)\neq 0$ for $0 < 2i < \dim(M)$
+      \item additional conditions on dimension 4 % (coming from Seiberg-Witten theory)
+    \end{itemize}
+  \end{itemize}
+  \begin{block}{Examples}
+    Sphere $\sphere{n}$ is \highlight{not} symplectic for $n>2$. % (by de Rham cohomology).
+    % TODO add!... does not admit a complex structure
+  \end{block}
+
+% TODO look up and fix! For instance, there are spaces which we suspect do not posess an almost complex structure, but where we cannot prove it. (cf. Atiyah, S⁶ - that's for almost complex though, right?)
+\end{frame}
+
+% Let's look at more advanced sample questions. Two theorems are related to Hamiltonian dynamics: what can we say about periodic Hamiltonian orbit?
+\begin{frame}
+  \frametitle{Sample theorems I: fixed points of dynamical systems}
+  % I'll skip the definition of non-degeneracy and just note that almost any Hamiltonian is non-degenerate. If you pick one at random, it's non-degenerate.
+  \begin{block}{Arnold conjecture}
+    If $M$ is a closed* symplectic manifold and $H\colon\sphere{1}\times M\to \R$ smooth and non-degenerate, then
+    \vspace{-0.5\baselineskip}
+    \[ \#\; \text{$1$-periodic orbits of $X_H$} \geq \sum_{i=1}^n b_i(M),\]
+    where $b_i(M) := \rk{H_i(M)}$ is the $i$-th Betti number of $M$.
+  \end{block}
+  % "mostly" solved: groundwork by Conley-Zehnder and Andreas Floer
+  % under certain technical assumptions (removal tricky!); proposed solutions, but no consensus on the details yet
+
+  \begin{block}{Conley conjecture}
+    If $M$ is a closed symplectic manifold with e.g.\ $\pi_2(M)=0$ and $H\colon \sphere{1}\times M\to\R$ is smooth and non-degenerate,
+    $X_H$ has infinitely many \shrink{simple} orbits of integer period.
+    % includes torus! and all symplectically aspherical ones.
+    % Ginzburg-Gürel's survey contains recent results
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Sample theorems II: symplectic fillings}
+  \begin{definition}
+    A \highlight{smooth filling} of a smooth manifold $M$ is a compact manifold $N$ with $\boundary N\cong M$.
+    % necessarily, $N$ has dimension one larger than $M$
+  \end{definition}
+  % Not every smooth manifold has a smooth filling: for example, complex projective space is not the boundary of any 5-manifold. However, this question is well-understood by now (and is solved by bordism theory).
+  not always possible ($\CP{2}$ has no smooth filling),\\but understood (bordism theory, 1960s)\pause
+  % So let's make the problem more interesting and consider this symplectically. The boundary of a symplectic manifold is odd-dimensional, hence cannot be symplectic any more --- but carries the odd-dimensional analogue of a symplectic structure, called a contact structure.
+  % A contact manifold is an odd-dimensional smooth manifold together with a contact structure: choosing a 1-form s.t. ... and taking its kernel at each point. (So, a contact structure is a collection of hyperplanes.)
+  \begin{definition}
+    A \highlight{contact manifold} $(M^{2n-1},\xi=\ker\alpha)$ is a smooth manifold $M$ together with a choice of $1$-form $\alpha$ s.t.\ $\alpha\wedge d\alpha^{n-1}\neq 0$.
+  \end{definition}
+  % So, the definition we're interested in is the following. Let's call this a template definition because there are various kinds of symplectic fillings. (This matters: a manifold can be fillable in one sense but not the other.)
+\begin{block}{Template definition}
+  A \highlight{symplectic filling} of $(M,\xi)$ is a compact symplectic manifold $(W,\omega)$ with $\boundary W\cong (M,\xi)$. % and orientations match
+\end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Sample theorem II: symplectic fillings (cont.)}
+  \begin{block}{Template definition}
+    \fade{A symplectic filling of $(M,\xi)$ is a compact symplectic manifold $(W,\omega)$ with $\boundary W\cong (M,\xi)$.}
+  \end{block}
+  % Today, I'll only mention exact fillings, which are the following.
+  \begin{definition}
+    An \highlight{exact symplectic filling} of $(M,\xi)$ is a compact symplectic manifold $(W,\omega=d\lambda)$ s.t.\ $\boundary W\cong (M,\xi)$ and the vector field $X$ induced by $\iota_X \omega=\lambda$ points outwards along $\boundary W$.
+  \end{definition}
+
+  \begin{theorem}[Zhou '20,'22]
+    If $n\geq 3$ and $n\neq 4$, $(\RP{2n-1}, \xi_\std)$ has no exact symplectic filling.
+  \end{theorem}
+\end{frame}
+% This list is by no means exhaustive. For instance, I've skipped Gromov's non-squeezing theorem and symplectic capacities, as Shah will talk about them tomorrow.
+
+\begin{frame}
+  \frametitle{Underlying paradigm: symplectic invariants}
+  \begin{itemize}
+    % Let's look at the machinery behind these sample theorems. As different as they look and are, their proofs share a common feature: they are related to invariants of symplectic manifolds.
+    % For instance, the Arnold and Conley conjecture use an invariant called Hamiltonian Floer homology.
+    \item Arnold, Conley conjecture: use \shrink{Hamiltonian} Floer homology
+
+    % Given a closed symplectic manifold, choose a non-degenerate Hamiltonian and consider the $1$-periodic Hamiltonian orbits. Hamiltonian Floer homology of $M$ is generated by these orbits. More precisely, it's the homology of a chain complex defined by these orbits. Hence, the rank of the homology gives a lower bound on the number of orbits. Relating the Betti numbers to the rank of Hamiltonian Floer homology completes the proof.
+    \item $(M,\omega)$ symplectic $\to$ homology groups $HF_\ast(M)$,\\ generated by $1$-periodic Ham.\ orbits $\mathcal{P}(H)$
+    \item Arnold conjecture: bound \# orbits via $\rk HF_*(M)$
+
+    % For the Conley conjecture, we pass to k-periodic orbits of $H_t$. The actual analysis is more involved.
+    \item Conley conjecture: pass to higher iterates
+    % the third theorem (about symplectic fillings) uses another invariant called (positive) symplectic homology; will skip for now (ask me at the end if you want me to explain more)
+    \item Zhou's theorem: use (action-filtered) positive symplectic homology of hypothetical filling
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Details: Hamiltonian Floer homology}
+  given: $(M,\omega)$ closed* symplectic manifold; $H\colon \sphere{1}\times M\to \R$ smooth, non-degenerate% e.g. symplectically aspherical
+  \begin{itemize}
+    \item \highlight{Floer chain complex} $(CF_*(M,\omega),\partial)$
+    \item Hamiltonian Floer homology $HF(M,\omega)=H_*(CF_*(M,\omega)))$
+    \item $CF_*(M)$ generated by $1$-periodic orbits of $X_H$
+    \item \shrink{\fade{grading by Conley-Zehnder index}}
+    % differential: contribution of one orbit to the other is given by counting Floer cylinders asymptotic to these orbits
+    \item differential counts \shrink{finite energy} \highlight{Floer cylinders}\\connecting two $1$-periodic orbits
+    % one can show that this is well-defined (that we indeed get a chain complex and that there are always finitely many cylinders); one can also show independence of the choice of Hamiltonian
+    \item show: well-defined; independent of $H$
+    % I will not get into details of this, but instead focus on holomorphic curve - Floer cylinder can be seen as a special case of them
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Proof sketch of Arnold conjecture}
+  given $(M,\omega)$ closed*; $H\colon \sphere{1}\times M\to \R$ smooth non-degenerate
+  \begin{itemize}
+    \item $CF_k(M)$ is generated by $1$-periodic orbits with index $k$
+    \item in particular: $\# 1\text{-periodic orbits} \geq \sum_k \rk HF_k(M)$
+    \item Morse theory: $\sum_k \rk H_k(M)\geq \sum_{i=0}^{2n} \rk H_k(M)$
+  \end{itemize}
+  \begin{theorem}
+    For each $k$, there is an isomorphism $HF_k(M)\cong H_{2n-k}(M)$.
+  \end{theorem}
+\end{frame}

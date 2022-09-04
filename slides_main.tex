@@ -1,0 +1,33 @@
+\input{static_preamble}
+\newcommand{\mymark}[3]{\underbracket{\textcolor{#1}{#2}}_{\textcolor{#1}{\text{#3}}}}
+\newcommand{\grad}{\nabla}
+\newcommand{\torus}[1]{\mathbb{T}^{#1}}
+\newcommand{\highlight}[1]{\textbf{#1}} % \textcolor{red}{#1}
+\newcommand{\fade}[1]{\textcolor{gray}{#1}}
+\newcommand{\shrink}[1]{{\footnotesize #1}}
+\newcommand{\intextdef}[1]{\highlight{#1}}
+\newcommand{\env}[1]{\highlight{#1}}
+
+\hypersetup{%
+    pdftitle={A glimpse at symplectic geometry and pseudo-holomorphic curves},
+    pdfsubject={BMS-BGSMath Junior Meeting 2022},
+    pdfauthor={Michael B. Rothgang},
+    unicode=true
+}
+\author[Michael Rothgang]{Michael B. Rothgang (he/him)}
+\institute[HU Berlin]{Symplectic geometry group\\Humboldt-Universität zu Berlin\\
+\includegraphics[width=3.2cm]{images/logo_bms.png}\hspace{2mm} % TODO add proper logo!
+\includegraphics[width=2.8cm]{images/logo_math+.png}\hspace{2mm}
+\includegraphics[width=1.2cm]{images/logo_hu.png}\hspace{2mm}
+\raisebox{-3mm}{\makebox{\includegraphics[width=1.5cm]{images/logo_erc.jpg}}}
+}
+\title[Symplectic geometry and pseudo-holomorphic curves]{A glimpse at symplectic geometry and pseudo-holomorphic curves}
+\date[September 7, 2022]{BMS-BGSMath Junior Meeting\\September 7, 2022}
+\begin{document}
+\frame{\titlepage}
+\input{intro}
+\input{motivation}
+\input{sample_questions}
+\input{holomorphic_curves}
+\input{conclusion}
+\end{document}
