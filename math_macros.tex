@@ -1,1 +1,132 @@
-/home/michael/Schreibtisch/Mathematik/Mathematics research/PhD research, write-ups/math_macros.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MATH OPERATORS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Declaring some math operators which I needed at some point.
+\DeclareMathOperator{\aut}{Aut} % automorphism group of a curve or surface
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Bil}{Bil} % set of bilinear forms
+\DeclareMathOperator{\Crit}{Crit} % set of critical points
+\DeclareMathOperator{\Diff}{Diff} % diffeomorphism group of a smooth manifold
+\DeclareMathOperator{\End}{End} % endomorphism bundle
+\DeclareMathOperator{\Fix}{Fix} % fixed point set
+\DeclareMathOperator{\support}{supp} % support of a (cont. or smooth) function
+\DeclareMathOperator{\Gal}{Gal} % Galois group of a field extension
+\DeclareMathOperator{\GL}{GL} % general linear group of a vector space
+\DeclareMathOperator{\Hess}{Hess} % Hessian
+\DeclareMathOperator{\Hom}{Hom} % space of homorphisms/homomorphism bundle
+\DeclareMathOperator{\Mat}{Mat} % space of matrices
+\DeclareMathOperator{\Mod}{Mod} % category of $R$-modules
+\DeclareMathOperator{\Mor}{Mor} % morphisms in a general category
+\DeclareMathOperator{\Ob}{Ob} % objects in a category
+\DeclareMathOperator{\PSL}{PSL} % projective special linear group
+\DeclareMathOperator{\Proj}{Proj} % homogeneous prime ideals
+\DeclareMathOperator{\Sing}{Sing} % singular set of an algebraic variety
+\DeclareMathOperator{\Sp}{Sp} % symplectic group
+\DeclareMathOperator{\SL}{SL} % special linear group
+\DeclareMathOperator{\Spec}{Spec} % action spectrum of a contact manifold
+\DeclareMathOperator{\Stab}{Stab} % stabiliser subgroup of an element
+\DeclareMathOperator{\Symp}{Symp} % symplectomorphism group of a symplectic manifold
+\DeclareMathOperator{\Tor}{Tor} % Tor functor (for cohomology groups)
+\DeclareMathOperator{\Tr}{Tr} % trace of a map
+\DeclareMathOperator{\codim}{codim} % codimension of a set
+\DeclareMathOperator{\coker}{coker} % cokernel of a map
+\DeclareMathOperator{\depth}{depth} % depth of a module
+\DeclareMathOperator{\diam}{diam} % diameter of a metric space
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\graph}{graph} % graph of a function
+\DeclareMathOperator{\ggT}{ggT}
+\DeclareMathOperator{\id}{id} % identity element or matrix
+\DeclareMathOperator{\im}{im} % image of a map (amsmath provides ker already).
+\DeclareMathOperator{\ind}{ind} % (Morse) index
+%\DeclareMathOperator{\interior}{Int} % interior of a set; "\int" is already taken
+\newcommand{\interior}[1]{\mathring{#1}}
+\DeclareMathOperator{\lcm}{lcm} % least common multiple
+\DeclareMathOperator{\md}{md} % minimal discrepancy of a singularity
+\DeclareMathOperator{\ord}{ord} % order of a group element
+\DeclareMathOperator{\rk}{rk} % rank of a matrix, linear map or quadratic form
+\DeclareMathOperator{\sgn}{sgn} % sign/sign function
+\DeclareMathOperator{\sign}{sign} % signature of a quadratic form
+\DeclareMathOperator{\vol}{vol} % volume of a manifold
+\DeclareMathOperator{\Sections}{\Gamma} % space of (smooth) sections of a vector or fiber bundle
+
+%%%%%%%%%%%%
+% DELIMITERS
+%%%%%%%%%%%%
+\usepackage{mathtools}
+% according to https://tex.stackexchange.com/questions/498/mid-vertical-bar-vert-lvert-rvert-divides,
+% | is a symbol (treated without spacing); \vert produces the same symbol and should be used for operators on ordinals
+% (but not as a delimiter); whereas \lvert and \rvert produce left and right delimiters
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\newcommand{\card}[1]{\lvert#1\rvert}
+\newcommand{\pairing}[2]{\langle #1, #2 \rangle}
+\newcommand{\generator}[1]{\langle #1 \rangle}
+% My math relations stuff.
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\scalarProduct}{\langle}{\rangle}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% SHORTHAND COMMANDS.
+% No special purpose, just as shorthands for my own mathematical writing.
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\disc}{\mathbb{D}} % closed unit disc
+\newcommand{\complexPlane}{\mathbb{C}} % complex plane/ set of complex numbers
+\newcommand{\complex}{\mathbb{C}} % set of complex numbers
+\newcommand{\real}{\mathbb{R}} % the set of real numbers
+\newcommand{\realPlane}{\mathbb{R}^2} % real plane
+\newcommand{\RP}[1]{\mathbb{RP}^{#1}} % real projective n-space
+\newcommand{\CP}[1]{\mathbb{CP}^{#1}} % complex projective n-space
+\newcommand{\sphere}[1]{\mathbb{S}^{#1}} % n-sphere
+
+\newcommand{\intersect}{\cap} % set intersection, small size
+\newcommand{\Intersect}{\bigcap} % set intersection, large size
+\newcommand{\union}{\cup} % set union, small size
+\newcommand{\Union}{\bigcup} % set union, large size
+\newcommand{\disjunion}{\sqcup} % disjoint union, with a square symbol
+\newcommand{\absCont}[2]{#1\ll #2} % denotes #1 being absolutely continuous w.r.t. #2
+\newcommand{\divides}{\mid}
+\newcommand{\notdivides}{\nmid}
+% Some group theory stuff.
+\newcommand{\subgp}{\leqslant}
+\newcommand{\nsubgp} {\trianglelefteq}
+\newcommand{\trivgp}{\langle e \rangle} % trivial group
+\newcommand{\dirlim}{\varinjlim} % direct limit
+\newcommand{\boundary}{\partial} % boundary of a subspace
+\newcommand{\del}{\partial}
+% Useful commands for writing algebra.
+\newcommand{\tensor}{\otimes}
+\newcommand{\isom}{\cong}
+\newcommand{\dsum}{\oplus} % direct sum
+\newcommand{\Dsum}{\bigoplus} % direct sum, large symbol
+\newcommand{\restricted}[1]{\vert_{#1}}
+\newcommand{\quotient}{/{\sim}}
+\newcommand{\closure}[1]{\overline{#1}} % (topological) closure of a set
+% This one was useful when doing Galois theory.
+\newcommand{\algclosure}[1]{\overline{#1}}
+\newcommand{\suchthat}{\,\mid\;} % best notation depends on the context!
+% Make some things easier to type.
+\newcommand{\std}{\text{std}}
+\newcommand{\loc}{\text{loc}}
+\newcommand{\reg}{\text{reg}}
+\newcommand{\transverse}{\pitchfork} % transverse intersection
+
+% Define some letters in blackboard bold or calligraphic font. This might be bad practice.
+% should be \upperHalfPlane instead: \newcommand{\HH}{\mathbb{H}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\LL}{\mathcal{L}}
+\newcommand{\GG}{\mathcal{G}}
+\newcommand{\OO}{\mathcal{O}}
+\newcommand{\FF}{\mathcal{F}}
+% My own commands for convenience.
+\newcommand{\st}{\colon}
+\newcommand{\ds}{\, \mathrm{d}s}
+\newcommand{\dt}{\, \mathrm{d}t}
+\newcommand{\dx}{\, \mathrm{d}x}
+\newcommand{\dy}{\, \mathrm{d}y}
+\newcommand{\dz}{\, \mathrm{d}z}
