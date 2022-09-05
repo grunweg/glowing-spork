@@ -26,13 +26,12 @@
 
 % Let's dive in and set the stage for our first hero, symplectic manifolds. "Manifold", I hear you ask. Let me start by quickly explaining that.
 \begin{frame}
-  \frametitle{Smooth manifolds}
-  % Imagine you're an ant crawling over the surface of the earth. You can move in two independent directions: forwards or backwards, and left or right. Let's pretend you're *really* small, so you don't notice that earth is uneven: to you, whereever you are, near you the surface of the earth looks like (part of) a disc.
-  \makebox[\textwidth]{\framebox[5cm]{
-    \rule{0pt}{5cm}
-  }}
-  \makebox[\textwidth]{picture of an ant crawling across the earth}
-  % TODO: picture of the ant; perhaps two different pictures
+  \frametitle{Manifolds}
+  % Imagine you're an ant crawling over the surface of the earth (or perhaps, a potate).
+  \includegraphics[width=5cm]{images/person_moving.png}\pause
+  % You can move in two independent directions: forwards or backwards, and left or right. Let's pretend you're *really* small, so you don't notice that earth is uneven: to you, whereever you are, near you the surface of the earth looks like (part of) a disc.
+  % TODO: slightly update the picture here!
+  \raisebox{-8mm}{\makebox{\includegraphics[width=6cm]{images/person_moving_directions.png}}}\\
   % In other words: earth' surface is an object which, locally looks, to an ant, like a part of a disk.
   earth is a manifold: locally looks like part of a disk
 \end{frame}
@@ -56,18 +55,18 @@
     % I'll also sometime mention the boundary of a manifold: this is where a manifold looks like a half-space. For instance, the upper half of the plane is a manifold with boundary - the real axis.
     \item boundary: looks like upper half of $\R^n$
   \end{itemize}
-  \includegraphics[width=8cm]{images/surface_with_chart.png}
+  \includegraphics[width=8cm]{images/surface_with_chart.png}\\
+  \tiny{Picture courtesy of Dominik Gutwein.}
 \end{frame}
 
 \begin{frame} % CAN SKIP
-  \frametitle{(Non-)Examples of smooth manifolds}
+  \frametitle{Examples of smooth manifolds}
   % Let's look at some examples of manifolds. In general, taking the (disjoint) union of two n-manifolds yields another n-manifold - so we can focus on connected spaces.
   \begin{itemize}
   % A zero-dimensional manifold consists of isolated points, which is often not interesting.
   \item $n=0$: isolated points
   % In dimension 1, we can have a line, but also a circle.
-  \item $n=1$: $\R$, $\sphere{1}$ % TODO: add pictures!
-  \framebox[1cm]{line}\framebox[1cm]{circle}
+  \item $n=1$: $\R$, $\sphere{1}$
   %\includegraphics[width=1cm]{images/line.png}
   %\includegraphics[width=1cm]{images/circle.png}
   % In dimension two, things get more interesting: the earth's surface is such an example. Topologically, it's homeomorphic to a sphere (or perhaps your favourite potato); we can also have a doughnut (or coffee cup) - but we could also take g tori and squish them together in a line (as drawn here). You'd call that a closed genus g surface. Of course, something like the real plane is totally fine as well.
@@ -94,17 +93,28 @@
   % If our patch is sufficiently small, we map it to R^2 via a chart and determine the area there: this amounts to integrating over a density function. Globally, we need to choose density functions in each chart in a compatible way: this amounts to a differential 2-form.
   \item locally: integrate density function
   \item globally: use a differential 2-form
-  % To make this precise, we consider the *tangent space* at a point. Imagine the manifold placed inside some R^n (the Whitney embedding theorem tell us we can always do this). Geometrically, the tangent space at a point is the space of all vectors at this point which are tangent to a manifold. I'll skip a formal definition.
-  % This is a real vector space, of the same dimension as the manifold. Moreover, a local chart induces a basis of the tangent space.
-  \item each $p\in M$ has \highlight{tangent space} $T_pM$, $2$-dimensional
-  % TODO: insert a picture, if I get a nice one!
-  % Now, a differential two-form locally specifies a density function for each local chart. Formally, it's a family of skew-symmetric bilinear maps on each tangent space, varying smoothly along the base point.
-  \item $2$-form $\omega = \{\omega_p\colon T_pM\times T_pM\to \R\}_{p\in M}$\\ $\omega_p$ anti-symmetric bilinear, smoothly varying with $p$
-  % We call a 2-form an area form if each bilinear map is non-degenerate.
-  \item \highlight{area form}: each $\omega_p$ is non-degenerate
-  % A two-dimensional symplectic manifold is precisely a smooth surface with a choice of area form.
-  \item \highlight{symplectic $2$-manifold}: $M$ plus choice of area form
-\end{itemize}
+  \end{itemize}
+  \begin{columns}
+    \begin{column}{0.7\textwidth}
+      \begin{itemize}
+        % To make this precise, we consider the *tangent space* at a point. Imagine the manifold placed inside some R^n (the Whitney embedding theorem tell us we can always do this). Geometrically, the tangent space at a point is the space of all vectors at this point which are tangent to a manifold. I'll skip a formal definition.
+        % This is a real vector space, of the same dimension as the manifold. Moreover, a local chart induces a basis of the tangent space.
+        \item each $p\in M$ has \highlight{tangent space} $T_pM$, $2$-dimensional $\R$-vector space
+        % Now, a differential two-form locally specifies a density function for each local chart. Formally, it's a family of skew-symmetric bilinear maps on each tangent space, varying smoothly along the base point.
+        \item $2$-form $\omega = \{\omega_p\colon T_pM\times T_pM\to \R\}_{p\in M}$\\ $\omega_p$ anti-symmetric bilinear,\\ smoothly varying with $p$
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.21\textwidth}
+      % TODO use a better picture if I get one
+      \vspace{3mm}\hspace{-8mm}\makebox{\includegraphics[width=3cm]{images/tangent_space_placeholder.png}}
+    \end{column}
+  \end{columns}
+  \begin{itemize}
+    % We call a 2-form an area form if each bilinear map is non-degenerate.
+    \item \highlight{area form}: each $\omega_p$ is non-degenerate
+    % A two-dimensional symplectic manifold is precisely a smooth surface with a choice of area form.
+    \item \highlight{symplectic $2$-manifold}: $M$ plus choice of area form
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -125,6 +135,7 @@
     \includegraphics[width=7cm]{images/splitting_nonembedded_curve.png}
     \item $\gamma$ any oriented closed \shrink{piece-wise smooth} curve:\\ decompose into closed embedded pieces
   \end{itemize}
+  \tiny{Pictures taken from Schlenk, \emph{Symplectic embedding problems old and new} (2017).}
 \end{frame}
 
 \begin{frame}
